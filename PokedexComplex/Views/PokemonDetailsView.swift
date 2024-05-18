@@ -36,7 +36,7 @@ struct PokemonDetailsView: View {
                     }
             }
             
-            Text(pokemonDetail?.name ?? "Unknown")
+            Text(pokemonDetail?.name.capitalized ?? "Unknown".capitalized)
                 .font(.system(size: 24, weight: .bold))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding([.leading, .top])
@@ -135,7 +135,7 @@ struct PokemonDetailsView: View {
                             
                             ForEach(pokemonDetail?.stats ?? [], id: \.self) { stat in
                                 HStack {
-                                    Text("\(stat.stat.name) :")
+                                    Text("\(stat.stat.name.capitalized) :")
                                         .foregroundStyle(.white)
                                         .font(.system(size: 14, weight: .semibold))
                                     Text("\(stat.base_stat)")
